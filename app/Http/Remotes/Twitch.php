@@ -134,4 +134,17 @@ class Twitch
 
         return $response;
     }
+
+    public function getEmotesForChannel($broadcasterId)
+    {
+        $method = 'chat/emotes';
+
+        $response = Http::withHeaders($this->authHeaders)
+            ->get(static::BASE . $method, [
+                'broadcaster_id' => $broadcasterId,
+            ])
+            ->json();
+
+        return $response['data'];
+    }
 }

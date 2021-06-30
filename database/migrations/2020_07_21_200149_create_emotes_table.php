@@ -13,7 +13,7 @@ class CreateEmotesTable extends Migration
             $table->string('emote_id');
             $table->string('code');
             $table->string('type');
-            $table->string('plan_id');
+            $table->string('plan_id')->nullable();
             $table->timestamps();
         });
     }
